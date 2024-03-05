@@ -18,7 +18,7 @@ classifier=pickle.load(pickle_in)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', prediction_text=prediction_text)
 
 
 
