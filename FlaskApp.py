@@ -15,10 +15,10 @@ from flask import Flask, request, jsonify, render_template
 app=Flask(__name__)
 pickle_in = open("classifier.pkl","rb")
 classifier=pickle.load(pickle_in)
-print('its here')
+
 @app.route('/')
 def home():
-    return render_template('index.html', prediction_text='Test')
+    return render_template('index.html')
 
 
 
