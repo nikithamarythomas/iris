@@ -15,7 +15,7 @@ from flask import Flask, request, jsonify, render_template
 app=Flask(__name__)
 pickle_in = open("classifier.pkl","rb")
 classifier=pickle.load(pickle_in)
-
+print('its here')
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -31,7 +31,7 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = classifier.predict(final_features)
 
-    
+    print('its over here')
     return render_template('index.html', prediction_text='The flower belong to species {}'.format(prediction))
     
     
